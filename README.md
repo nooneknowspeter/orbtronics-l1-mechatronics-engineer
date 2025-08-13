@@ -167,4 +167,22 @@ The modular mounting system allows rapid swap-out of the main unit without unins
 ![Technical Drawing of IoT Device Enclosure Top](./cad/export/Assembly_IoTDevice_Blueprints_Page_02.png)
 ![Technical Drawing of IoT Device Enclosure Bottom](./cad/export/Assembly_IoTDevice_Blueprints_Page_03.png)
 
+### Wiring Diagram of IoT Device Assembly
+
+```mermaid
+graph LR
+    %% components
+    arduino[Arduino Nano 33 IoT]
+    battery[103060 Battery]
+    dht22[DHT22]
+    jst2pin[2 Pin JST Connector]
+
+    %% connections
+    battery <-- POWER --> jst2pin <-- VIN --> arduino
+    battery <-- GND --> jst2pin <-- GND --> arduino
+    dht22 <--VCC -> 3V --> arduino
+    dht22 <-- GND -> GND --> arduino
+    dht22 <-- DATA -> D3 --> arduino
+```
+
 ## Part 2 - Software
