@@ -135,6 +135,9 @@ and benefits of a standard Arduino Nano with built-in wi-fi and bluetooth capabi
 
 ## Enclosure Design
 
+The enclosure [top half](./cad/export/Assembly_IoTDevice_Enclosure_Top.stl) and
+[bottom half](./cad/export/Assembly_IoTDevice_Enclosure_Bottom.stl) can be viewed in the browser.
+
 ### Material Choice
 
 The enclosure was designed with manufacturability in mind, specifically for 3D printing
