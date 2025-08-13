@@ -163,9 +163,9 @@ The modular mounting system allows rapid swap-out of the main unit without unins
 
 ### Technical Drawings of IoT Device Assembly
 
-![Technical Drawing of IoT Device Assembly](./cad/export/Assembly_IoTDevice_Blueprints_Page_01.png)
-![Technical Drawing of IoT Device Enclosure Top](./cad/export/Assembly_IoTDevice_Blueprints_Page_02.png)
-![Technical Drawing of IoT Device Enclosure Bottom](./cad/export/Assembly_IoTDevice_Blueprints_Page_03.png)
+![Technical Drawing of IoT Device Assembly](./cad/export/Assembly_IoTDevice_Blueprints_Page_01.jpg)
+![Technical Drawing of IoT Device Enclosure Top](./cad/export/Assembly_IoTDevice_Blueprints_Page_02.jpg)
+![Technical Drawing of IoT Device Enclosure Bottom](./cad/export/Assembly_IoTDevice_Blueprints_Page_03.jpg)
 
 ### Wiring Diagram of IoT Device Assembly
 
