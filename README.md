@@ -135,8 +135,36 @@ and benefits of a standard Arduino Nano with built-in wi-fi and bluetooth capabi
 
 ## Enclosure Design
 
-### Diagram of Arduino Nano 33 IoT Dimensions
+### Material Choice
 
-![arduino_nano_mechanical_information](public/arduino_nano_mechanical_information.png)
+The enclosure was designed with manufacturability in mind, specifically for 3D printing
+using an [ASA/Polycarbonate alloy](https://www.matweb.com/search/DataSheet.aspx?MatGUID=99370cc98ea74464a72481d4289db059&ckck=1). ASA offers mechanical strength, impact resistance,
+and UV stability superior to ABS, while also outperforming PLA in humidity resistance and PETG in impact resistance.
+Wall thickness is set at 4 mm to ensure robustness while keeping print time reasonable.
+Internal openings include 1–2% tolerance to accommodate battery expansion over time, with a pull-tab for easy removal.
+A sliding mechanism allows the main device body (male version) to dock into interchangeable female adapters for wall mounting or pole clamping.
+
+For environmental sealing, the enclosure integrates a 2 mm silicone gasket channel (1 mm per mating side), providing splash resistance up to IP54+.
+Gaskets can be produced via extrusion or replaced with gasket maker for a low-cost, field-serviceable option.
+Additional gasket channels are added to USB and sensor openings for extra ingress protection.
+
+### Mass Manufacturing Approach
+
+For larger-scale production, the enclosure design can be adapted for injection molding using the same ASA/PC blend,
+reducing per-unit costs after tooling. Gaskets could be mass-produced via extrusion or molded in bulk.
+Bulk procurement of electronics and mechanical components, as listed in the Bill of Materials, will further reduce costs.
+Assembly would be simplified by the modular design, with the battery connected via a JST 2-pin connector for quick installation or replacement.
+
+### Maintenance Considerations
+
+Field maintenance is simplified through design features such as the pull-tab battery removal,
+easily accessible JST connectors, and standard screw fittings for enclosure access.
+The modular mounting system allows rapid swap-out of the main unit without uninstalling the mounting hardware.
+
+### Technical Drawings of IoT Device Assembly
+
+![Technical Drawing of IoT Device Assembly](./cad/export/Assembly_IoTDevice_Blueprints_Page_01.png)
+![Technical Drawing of IoT Device Enclosure Top](./cad/export/Assembly_IoTDevice_Blueprints_Page_02.png)
+![Technical Drawing of IoT Device Enclosure Bottom](./cad/export/Assembly_IoTDevice_Blueprints_Page_03.png)
 
 ## Part 2 - Software
