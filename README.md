@@ -181,11 +181,11 @@ graph LR
     jst2pin[2 Pin JST Connector]
 
     %% connections
-    battery <-- POWER --> jst2pin <-- VIN --> arduino
-    battery <-- GND --> jst2pin <-- GND --> arduino
-    dht22 <--VCC -> 3V --> arduino
-    dht22 <-- GND -> GND --> arduino
-    dht22 <-- DATA -> D3 --> arduino
+    battery -- POWER --> jst2pin -- VIN --> arduino
+    battery -- GND --> jst2pin -- GND --> arduino
+    arduino -- 3V -> VCC --> dht22
+    arduino -- GND -> GND --> dht22
+    dht22 <-- D3 -> DATA --> arduino
 ```
 
 ## Part 2 - Software
