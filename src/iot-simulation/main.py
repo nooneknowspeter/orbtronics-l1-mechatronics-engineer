@@ -27,3 +27,7 @@ def simulation() -> None:
             f"{data.humidity}%",
         )
         sleep(5)
+
+
+if __name__ == "__main__":
+    simulation()
