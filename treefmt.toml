@@ -1,3 +1,5 @@
+# https://github.com/numtide/treefmt-nix/tree/main/examples
+
 [formatter.black]
 command = "black"
 excludes = []
