@@ -29,6 +29,12 @@
 
               air
               go
+
+              # dev-tools
+              atac
+              openapi-tui
+              posting
+              treefmt
             ];
           };
         };
