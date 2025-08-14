@@ -18,6 +18,12 @@
         devShells = {
           default = pkgs.mkShell {
             packages = with pkgs; [
+              # formatters
+              black
+              isort
+              nixfmt-rfc-style
+              prettier
+
               python313
             ];
           };
