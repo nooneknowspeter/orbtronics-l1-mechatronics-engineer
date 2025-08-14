@@ -24,7 +24,11 @@
               nixfmt-rfc-style
               prettier
 
+              # runtimes & compilers
               python313
+
+              air
+              go
             ];
           };
         };
