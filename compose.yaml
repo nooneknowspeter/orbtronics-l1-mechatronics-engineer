@@ -1,3 +1,6 @@
 services:
   backend:
     restart: always
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile
