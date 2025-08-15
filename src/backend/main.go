@@ -1,11 +1,13 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"github.com/joho/godotenv"
+)
 
 type DeviceData struct {
 	Name        string  `json:"deviceName"`
@@ -22,6 +24,7 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 
 	switch request.Method {
 	case http.MethodGet:
+		json.NewEncoder(writer).Encode(device)
 
 		fmt.Println(request.Method, request.Header["User-Agent"])
 	}
