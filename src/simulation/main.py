@@ -10,6 +10,9 @@ class SimulationData:
     def __init__(self) -> None:
         None
 
+    def randomValue(self, start: int, end: int, roundNDigits: int = 2) -> float:
+        return round(random.uniform(start, end), roundNDigits)
+
     def updateValues(self) -> None:
         self.temperature = random.randint(18, 35)
         self.humidity = random.randint(40, 80)
