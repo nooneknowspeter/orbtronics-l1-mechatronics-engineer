@@ -1,13 +1,14 @@
 import os
 import random
+import sys
 from time import sleep
 
 import dotenv
 import requests
 
 
-class SimulationData:
     device_name: str = "device001"
+class Device:
     temperature: float = 0
     humidity: float = 0
 
@@ -71,12 +72,29 @@ def loadEnvironmentFile():
 
 
 if __name__ == "__main__":
-    dotenv.load_dotenv()
+    device = Device(device_name="simulation")
 
-    server_url = os.getenv("SERVER_URL")
-    if server_url is None:
-        print("environment variable SERVER_URL not defined")
+    if len(sys.argv) != 1:
+        flag = sys.argv[1]
+
+        try:
+            if flag != "--offline":
+                raise Exception("invalid flag")
+        except Exception as e:
+            print(e)
+
+        simulate(device)
     else:
-        data = SimulationData()
+        loadEnvironmentFile()
 
-        simulation(data, server_url)
+        server_url = os.getenv("SERVER_URL")
+
+        try:
+            if server_url is None:
+                raise Exception("environment variable SERVER_URL not defined")
+        except Exception as e:
+            print(e)
+
+        print("SERVER_URL:", server_url)
+        print("created device:", device.device_name)
+        simulate(device, server_url)
