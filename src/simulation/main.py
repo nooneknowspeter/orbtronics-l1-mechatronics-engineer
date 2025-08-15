@@ -1,3 +1,4 @@
+import datetime
 import os
 import random
 import sys
@@ -40,6 +41,7 @@ class Device:
 deviceName: {self.device_name}
 temperature: {self.temperature}°C
 humidity: {self.humidity}%
+timestamp: {datetime.datetime.now()}
 """
         )
 
