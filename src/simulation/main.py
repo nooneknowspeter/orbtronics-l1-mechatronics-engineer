@@ -53,6 +53,23 @@ def simulation(data, server_url) -> None:
         sleep(5)
 
 
+def loadEnvironmentFile():
+    parent_env_file = "../../.env"
+    cwd_env_file = ".env"
+
+    try:
+        if os.path.exists(parent_env_file):
+            print("loading parent .env file")
+            dotenv.load_dotenv(dotenv_path=parent_env_file)
+        elif os.path.exists(cwd_env_file):
+            print("loading cwd .env file")
+            dotenv.load_dotenv()
+        else:
+            raise FileNotFoundError(".env files not found")
+    except Exception as e:
+        print(e)
+
+
 if __name__ == "__main__":
     dotenv.load_dotenv()
 
