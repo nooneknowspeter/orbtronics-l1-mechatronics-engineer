@@ -1,6 +1,8 @@
+import os
 import random
 from time import sleep
 
+import dotenv
 import requests
 
 
@@ -52,4 +54,12 @@ def simulation(data, server_url) -> None:
 
 
 if __name__ == "__main__":
-    simulation()
+    dotenv.load_dotenv()
+
+    server_url = os.getenv("SERVER_URL")
+    if server_url is None:
+        print("environment variable SERVER_URL not defined")
+    else:
+        data = SimulationData()
+
+        simulation(data, server_url)
