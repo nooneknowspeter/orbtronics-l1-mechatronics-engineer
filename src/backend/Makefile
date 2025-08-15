@@ -7,3 +7,5 @@ watch:
 compile:
 	mkdir -p build
 	go build -o build
+api:
+	openapi-tui -i api-client/api.yaml
