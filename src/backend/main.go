@@ -27,6 +27,9 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 		json.NewEncoder(writer).Encode(device)
 
 		fmt.Println(request.Method, request.Header["User-Agent"])
+
+	case http.MethodPost:
+		fmt.Println(request.Method, request.Header["User-Agent"], device)
 	}
 }
 
