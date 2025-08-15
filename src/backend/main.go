@@ -29,6 +29,13 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 		fmt.Println(request.Method, request.Header["User-Agent"])
 
 	case http.MethodPost:
+		var newData DeviceData
+
+		if err := json.NewDecoder(request.Body).Decode(&newData); err != nil {
+			http.Error(writer, "invalid JSON", http.StatusBadRequest)
+			return
+		}
+
 		fmt.Println(request.Method, request.Header["User-Agent"], device)
 	}
 }
