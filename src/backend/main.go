@@ -9,6 +9,8 @@ import (
 )
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "application/json")
+
 }
 
 func main() {
