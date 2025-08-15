@@ -38,8 +38,8 @@ class Device:
             return round(random_value_from_range, roundNDigits)
 
     def updateValues(self) -> None:
-        self.humidity = self.randomValue(18, 35, 2)
-        self.temperature = self.randomValue(40, 80, 2)
+        self.temperature = self.randomValue(18, 35, 2)
+        self.humidity = self.randomValue(40, 80, 2)
 
     def postDataToServer(self, server_url) -> int:
         payload = {
