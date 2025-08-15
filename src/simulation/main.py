@@ -19,6 +19,24 @@ class Device:
     def __init__(self, device_name: str) -> None:
         self.device_name = device_name
 
+    def randomValue(
+        self,
+        start: int,
+        end: int,
+        roundNDigits: int = 2,
+        abnormalThreshols: float = 0.2,
+    ) -> float:
+        abnormal_threshold = 0.2
+        seed = random.random()
+        random_value_from_range = random.uniform(start, end)
+
+        if seed > abnormal_threshold:
+            return round(
+                random_value_from_range * (abnormal_threshold / seed), roundNDigits
+            )
+        else:
+            return round(random_value_from_range, roundNDigits)
+
     def updateValues(self) -> None:
         self.humidity = self.randomValue(18, 35, 2)
         self.temperature = self.randomValue(40, 80, 2)
