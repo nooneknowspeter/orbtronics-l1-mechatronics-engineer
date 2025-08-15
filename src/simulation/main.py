@@ -42,13 +42,8 @@ humidity: {self.humidity}%
 
     while True:
         data.updateValues()
-        print(
-            "Temperature:",
-            f"{data.temperature}°C",
-            "|",
-            "Humidity:",
-            f"{data.humidity}%",
-        )
+        print(data)
+
         sleep(5)
 
 
