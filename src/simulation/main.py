@@ -1,6 +1,8 @@
 import random
 from time import sleep
 
+import requests
+
 
 class SimulationData:
     device_name: str = "device001"
@@ -17,9 +19,17 @@ class SimulationData:
         self.humidity = self.randomValue(18, 35, 2)
         self.temperature = self.randomValue(40, 80, 2)
 
+    def postDataToServer(self, server_url) -> int:
+        payload = {
+            "deviceName": self.device_name,
+            "temperature": self.temperature,
+            "humidity": self.humidity,
+        }
 
-def simulation() -> None:
-    data = SimulationData()
+        request = requests.post(url=server_url, json=payload)
+
+        if request.status_code != 201:
+            print("failed to send information to server")
 
     while True:
         data.updateValues()
