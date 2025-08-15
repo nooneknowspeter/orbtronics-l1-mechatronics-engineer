@@ -12,6 +12,9 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 
 	switch request.Method {
+	case http.MethodGet:
+
+		fmt.Println(request.Method, request.Header["User-Agent"])
 	}
 }
 
