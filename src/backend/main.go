@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sync"
+
 	"github.com/joho/godotenv"
 )
 
@@ -17,6 +19,7 @@ type DeviceData struct {
 
 var (
 	device DeviceData
+	mutex  sync.RWMutex
 )
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
@@ -24,6 +27,8 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 
 	switch request.Method {
 	case http.MethodGet:
+		mutex.RLock()
+		defer mutex.RUnlock()
 		json.NewEncoder(writer).Encode(device)
 
 		fmt.Println(request.Method, request.Header["User-Agent"])
@@ -35,6 +40,10 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 			http.Error(writer, "invalid JSON", http.StatusBadRequest)
 			return
 		}
+
+		mutex.Lock()
+		defer mutex.Unlock()
+		device = newData
 
 		writer.WriteHeader(http.StatusCreated)
 		json.NewEncoder(writer).Encode(device)
