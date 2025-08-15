@@ -6,6 +6,13 @@ import (
 	"net/http"
 	"os"
 	"github.com/joho/godotenv"
+
+type DeviceData struct {
+	Name        string  `json:"deviceName"`
+	Temperature float32 `json:"temperature"`
+	Humidity    float32 `json:"humidity"`
+}
+
 )
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
