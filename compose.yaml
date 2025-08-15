@@ -14,3 +14,5 @@ services:
     build:
       context: ./src/simulation
       dockerfile: Dockerfile
+    environment:
+      SERVER_URL: http://backend:${SERVER_PORT}/api/user/device
