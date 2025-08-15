@@ -3,6 +3,7 @@ from time import sleep
 
 
 class SimulationData:
+    device_name: str = "device001"
     temperature: float = 0
     humidity: float = 0
 
