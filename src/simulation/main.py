@@ -14,8 +14,8 @@ class SimulationData:
         return round(random.uniform(start, end), roundNDigits)
 
     def updateValues(self) -> None:
-        self.temperature = random.randint(18, 35)
-        self.humidity = random.randint(40, 80)
+        self.humidity = self.randomValue(18, 35, 2)
+        self.temperature = self.randomValue(40, 80, 2)
 
 
 def simulation() -> None:
