@@ -41,7 +41,7 @@ class Device:
         self.temperature = self.randomValue(18, 35, 2)
         self.humidity = self.randomValue(40, 80, 2)
 
-    def postDataToServer(self, server_url) -> int:
+    def postDataToServer(self, server_url) -> None:
         payload = {
             "deviceName": self.device_name,
             "temperature": self.temperature,
