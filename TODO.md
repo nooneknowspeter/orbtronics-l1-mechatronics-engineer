@@ -5,13 +5,13 @@
 ## Part 2 - Software
 
 - [ ] Python script
-  - [ ] Simulates sensor readings for temperature (18–35°C) and humidity (40–80%)
-  - [ ] Sends readings every 5–10 seconds to a backend API
+  - [x] Simulates sensor readings for temperature (18–35°C) and humidity (40–80%)
+  - [x] Sends readings every 5–10 seconds to a backend API
   - [ ] Occasionally sends “abnormal” readings to test alerts
 
-- [ ] Backend API (FastAPI or Flask preferred)
-  - [ ] Receives readings and stores them in memory (dict or SQLite)
-  - [ ] Has endpoint for dashboard to fetch latest readings
+- [x] Backend API (FastAPI or Flask preferred)
+  - [x] Receives readings and stores them in memory (dict or SQLite)
+  - [x] Has endpoint for dashboard to fetch latest readings
   - [ ] Has endpoint to set alert thresholds
 
 - [ ] Dashboard (Simple HTML/JS or React)
