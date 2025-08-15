@@ -3,8 +3,8 @@ from time import sleep
 
 
 class SimulationData:
-    temperature: int = 0
-    humidity: int = 0
+    temperature: float = 0
+    humidity: float = 0
 
     def __init__(self) -> None:
         None
