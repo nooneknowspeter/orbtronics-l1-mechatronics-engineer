@@ -36,6 +36,9 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 			return
 		}
 
+		writer.WriteHeader(http.StatusCreated)
+		json.NewEncoder(writer).Encode(device)
+
 		fmt.Println(request.Method, request.Header["User-Agent"], device)
 	}
 }
