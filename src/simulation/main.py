@@ -40,8 +40,12 @@ humidity: {self.humidity}%
 """
         )
 
+
+def simulation(data, server_url) -> None:
     while True:
         data.updateValues()
+        data.postDataToServer(server_url=server_url)
+
         print(data)
 
         sleep(5)
