@@ -13,6 +13,8 @@ type DeviceData struct {
 	Humidity    float32 `json:"humidity"`
 }
 
+var (
+	device DeviceData
 )
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
