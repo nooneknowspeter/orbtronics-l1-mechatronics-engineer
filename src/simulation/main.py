@@ -64,12 +64,16 @@ timestamp: {datetime.datetime.now()}
         )
 
 
-def simulation(data, server_url) -> None:
-    while True:
-        data.updateValues()
-        data.postDataToServer(server_url=server_url)
+def simulate(device, server_url=None) -> None:
+    print("\nstarting simulation...\n")
 
-        print(data)
+    while True:
+        device.updateValues()
+
+        if not server_url is None:
+            device.postDataToServer(server_url=server_url)
+
+        print(device)
 
         sleep(5)
 
