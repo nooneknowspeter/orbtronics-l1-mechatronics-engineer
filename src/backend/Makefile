@@ -2,3 +2,5 @@
 
 run:
 	go run .
+watch:
+	air
