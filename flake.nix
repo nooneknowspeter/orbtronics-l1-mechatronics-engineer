@@ -29,6 +29,7 @@
 
               air
               go
+              gotools
 
               # dev-tools
               atac
