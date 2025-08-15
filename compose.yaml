@@ -11,3 +11,6 @@ services:
 
   simulation:
     restart: always
+    build:
+      context: ./src/simulation
+      dockerfile: Dockerfile
