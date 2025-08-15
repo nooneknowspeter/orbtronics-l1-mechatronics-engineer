@@ -31,6 +31,15 @@ class SimulationData:
         if request.status_code != 201:
             print("failed to send information to server")
 
+    def __str__(self) -> str:
+        return str(
+            f"""
+deviceName: {self.device_name}
+temperature: {self.temperature}°C
+humidity: {self.humidity}%
+"""
+        )
+
     while True:
         data.updateValues()
         print(
