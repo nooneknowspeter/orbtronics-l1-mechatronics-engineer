@@ -20,6 +20,7 @@
             packages = with pkgs; [
               # formatters
               black
+              dockfmt
               isort
               nixfmt-rfc-style
               prettier
