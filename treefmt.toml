@@ -6,6 +6,12 @@ excludes = []
 includes = ["*.py", "*.pyi"]
 options = []
 
+[formatter.dockfmt]
+command = "dockfmt"
+excludes = []
+includes = ["Dockerfile", "*.Dockerfile", "Dockerfile.*"]
+options = ["fmt", "-w"]
+
 [formatter.isort]
 command = "isort"
 excludes = []
