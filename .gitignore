@@ -2,3 +2,5 @@
 *.FCBak.*
 
 .direnv
+
+.env
