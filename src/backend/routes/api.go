@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"nooneknows/orbtronics-l1-mechatronics-engineer/models"
+	"os"
 	"sync"
 )
 
@@ -15,6 +16,11 @@ var (
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
+
+	// CORS frontend
+	writer.Header().Set("Access-Control-Allow-Origin", os.Getenv("FRONTEND_URL"))
+	writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+	writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 	switch request.Method {
 	case http.MethodGet:
