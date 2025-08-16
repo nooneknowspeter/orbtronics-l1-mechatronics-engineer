@@ -28,3 +28,6 @@
 		setInterval(fetchData, 5000);
 	});
 </script>
+
+<div class="flex h-screen flex-col items-center justify-center gap-10">
+</div>
