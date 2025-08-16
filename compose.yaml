@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4173:4173
+    environment:
+      VITE_SERVER_URL: http://localhost:${SERVER_PORT}/api/user/device
   backend:
     restart: always
     build:
