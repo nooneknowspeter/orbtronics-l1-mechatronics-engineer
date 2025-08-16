@@ -32,6 +32,32 @@
 <div class="flex h-screen flex-col items-center justify-center gap-10">
 	{#if deviceData}
 		<h1 class="text-xl">{deviceName}</h1>
+
+		<!-- temperature -->
+		<div class="flex flex-row gap-5">
+			<div class="flex flex-col items-center justify-center gap-5">
+				<div
+					class="radial-progress rotate-180"
+					style="--value: {deviceTemp}; --size:12rem; --thickness: 1rem;"
+					aria-valuenow={deviceTemp}
+					role="progressbar"
+				></div>
+				<h1>Temperature</h1>
+				<p>{deviceTemp}°C</p>
+			</div>
+
+			<!-- humidity -->
+			<div class="flex flex-col items-center justify-center gap-5">
+				<div
+					class="radial-progress rotate-180"
+					style="--value: {deviceHumidity}; --size:12rem; --thickness: 1rem;"
+					aria-valuenow={deviceHumidity}
+					role="progressbar"
+				></div>
+				<h1>Humidity</h1>
+				<p>{deviceHumidity}%</p>
+			</div>
+		</div>
 	{:else}
 		<span class="loading loading-xl loading-spinner"></span>
 	{/if}
