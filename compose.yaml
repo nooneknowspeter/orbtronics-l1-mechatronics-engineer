@@ -21,6 +21,7 @@ services:
     environment:
       SERVER_PORT: ${SERVER_PORT}
       POSTGRES_CONNECTION_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database/${POSTGRES_DB}?sslmode=disable
+      FRONTEND_URL: http://localhost:4173
     depends_on:
       - database
 
