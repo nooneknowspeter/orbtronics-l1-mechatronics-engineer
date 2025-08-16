@@ -30,4 +30,9 @@
 </script>
 
 <div class="flex h-screen flex-col items-center justify-center gap-10">
+	{#if deviceData}
+		<h1 class="text-xl">{deviceName}</h1>
+	{:else}
+		<span class="loading loading-xl loading-spinner"></span>
+	{/if}
 </div>
