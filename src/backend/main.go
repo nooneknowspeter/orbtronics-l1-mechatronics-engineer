@@ -62,6 +62,21 @@ func checkFileExistance(path string) (bool, error) {
 
 	return true, nil
 }
+
+func loadEnvironmentFile(envFile string) error {
+	if doesFileExist, err := checkFileExistance(envFile); doesFileExist {
+		fmt.Printf("loading environment file: %s\n", envFile)
+		if err := godotenv.Load(envFile); err != nil {
+			log.Fatal("error loading .env")
+			return fmt.Errorf("")
+		}
+	} else {
+		fmt.Println(err)
+		return fmt.Errorf("")
+	}
+
+	return nil
+}
 func main() {
 	err := godotenv.Load()
 	if err != nil {
