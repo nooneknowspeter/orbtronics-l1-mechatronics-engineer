@@ -16,17 +16,17 @@
   - [x] dockerfile
   - [ ] setup database
 
-- [ ] Dashboard (Simple HTML/JS or React)
+- [x] Dashboard (Simple HTML/JS or React)
   - [ ] ui/ux mockup
-  - [ ] Displays latest readings
-  - [ ] Shows a red alert if readings exceed thresholds
+  - [x] Displays latest readings
+  - [x] Shows a red alert if readings exceed thresholds
   - [ ] Allows updating thresholds (sends to backend)
-  - [ ] dockerfile
+  - [x] dockerfile
 
-- [ ] Short video demo (max 3 min) showing:
-  - [ ] Simulation running
-  - [ ] Dashboard updating in real time
-  - [ ] Alert triggering
+- [x] Short video demo (max 3 min) showing:
+  - [x] Simulation running
+  - [x] Dashboard updating in real time
+  - [x] Alert triggering
 
 - [ ] docs
   - [ ] README.md – How to run the simulation, backend, and dashboard
