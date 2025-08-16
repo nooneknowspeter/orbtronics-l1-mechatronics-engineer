@@ -37,4 +37,7 @@
 		"vite": "^7.0.4",
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
+	"dependencies": {
+		"daisyui": "^5.0.50"
+	}
 }
