@@ -1,14 +1,6 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"log"
-	"net/http"
-	"os"
-	"sync"
-
-	"github.com/joho/godotenv"
 	"nooneknows/orbtronics-l1-mechatronics-engineer/helpers"
 	"nooneknows/orbtronics-l1-mechatronics-engineer/models"
 	"nooneknows/orbtronics-l1-mechatronics-engineer/routes"
@@ -19,46 +11,6 @@ type DeviceData struct {
 	Temperature float32 `json:"temperature"`
 	Humidity    float32 `json:"humidity"`
 }
-
-var (
-	device DeviceData
-	mutex  sync.RWMutex
-	"nooneknows/orbtronics-l1-mechatronics-engineer/helpers"
-)
-
-func deviceData(writer http.ResponseWriter, request *http.Request) {
-	writer.Header().Set("Content-Type", "application/json")
-
-	switch request.Method {
-	case http.MethodGet:
-		mutex.RLock()
-		defer mutex.RUnlock()
-		json.NewEncoder(writer).Encode(device)
-
-		fmt.Println(request.Method, request.Header["User-Agent"])
-
-	case http.MethodPost:
-		var newData DeviceData
-
-		if err := json.NewDecoder(request.Body).Decode(&newData); err != nil {
-			http.Error(writer, "invalid JSON", http.StatusBadRequest)
-			return
-		}
-
-		mutex.Lock()
-		defer mutex.Unlock()
-		device = newData
-
-		writer.WriteHeader(http.StatusCreated)
-		json.NewEncoder(writer).Encode(device)
-
-		fmt.Println(request.Method, request.Header["User-Agent"], device)
-
-	default:
-		http.Error(writer, "invalid method", http.StatusMethodNotAllowed)
-	}
-}
-
 func main() {
 	parentEnvFile := "../../.env"
 	if err := helpers.LoadEnvironmentFile(parentEnvFile); err == nil {
@@ -67,14 +19,8 @@ func main() {
 	cwdEnvFile := ".env"
 	if err := helpers.LoadEnvironmentFile(cwdEnvFile); err == nil {
 	}
-	
-	port := os.Getenv("SERVER_PORT")
-	if port == "" {
-		port = "8000"
-	}
 
-	http.HandleFunc("/api/user/device", deviceData)
+	models.StartDatabaseConnection()
 
-	http.ListenAndServe(":"+port, nil)
-	fmt.Printf("server running on port %s\n", port)
+	routes.StartServer()
 }
