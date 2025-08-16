@@ -8,6 +8,7 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:
       SERVER_PORT: ${SERVER_PORT}
+      POSTGRES_CONNECTION_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database/${POSTGRES_DB}?sslmode=disable
 
   simulation:
     restart: always
