@@ -82,11 +82,11 @@ func main() {
 	if err := loadEnvironmentFile(parentEnvFile); err == nil {
 	}
 
-	port := os.Getenv("PORT")
 	cwdEnvFile := ".env"
 	if err := loadEnvironmentFile(cwdEnvFile); err == nil {
 	}
 
+	port := os.Getenv("SERVER_PORT")
 	if port == "" {
 		port = "8000"
 	}
