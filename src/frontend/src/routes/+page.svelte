@@ -24,5 +24,7 @@
 
 	onMount(() => {
 		fetchData;
+
+		setInterval(fetchData, 5000);
 	});
 </script>
