@@ -32,6 +32,8 @@
               go
               gotools
 
+              bun
+
               # dev-tools
               atac
               openapi-tui
