@@ -1,6 +1,30 @@
 # L1 Mechatronics Engineer Techinical Design Round
 
-[Technical Design Round Information](./docs/L1-Mechatronics-Engineer-Technical-Design-Round.pdf)
+## Table of Contents
+
+1. [Technical Design Round Information](./docs/L1-Mechatronics-Engineer-Technical-Design-Round.pdf)
+2. Part 1 - Hardware
+   1. [Microcontroller and Components](<#microcontroller-and-components-(arduino-nano-vs-raspberry-pi-zero-w)>)
+      - [Arduino Nano](#arduino-nano)
+        - [Pros](#pros-1)
+        - [Cons](#cons-1)
+        - [Diagram Showing Solutions Architecture for Arduino Nano](#diagram-showing-solutions-architecture-for-arduino-nano)
+      - [Raspberry Pi Zero W](#raspberry-pi-zero-w)
+        - [Pros](#pros-2)
+        - [Cons](#cons-2)
+        - [Diagram Showing Solutions Architecture for Raspberry Pi Zero W](#diagram-showing-solutions-architecture-for-raspberry-pi-zero-w)
+      - [Final Choice](#final-choice)
+   2. [Enclosure Design](#enclosure-design)
+      - [Material Choice](#material-choice)
+      - [Mass Manufacturing Approach](#mass-manufacturing-approach)
+      - [Maintenance Considerations](#maintenance-considerations)
+      - [Technical Drawings of IoT Device Assembly](#technical-drawings-of-iot-device-assembly)
+      - [Wiring Diagram of IoT Device Assembly](#wiring-diagram-of-iot-device-assembly)
+3. Part 2 - Software
+   1. [Solutions Architecture](#solutions-architecture)
+   2. [Setup](#setup)
+      - [Docker](#docker)
+      - [Nix](#nix)
 
 ## Part 1 - Hardware
 
