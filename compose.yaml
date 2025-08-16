@@ -8,6 +8,9 @@ services:
       - 4173:4173
     environment:
       VITE_SERVER_URL: http://localhost:${SERVER_PORT}/api/user/device
+    depends_on:
+      - backend
+
   backend:
     restart: always
     build:
@@ -18,6 +21,8 @@ services:
     environment:
       SERVER_PORT: ${SERVER_PORT}
       POSTGRES_CONNECTION_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database/${POSTGRES_DB}?sslmode=disable
+    depends_on:
+      - database
 
   simulation:
     restart: always
@@ -26,6 +31,8 @@ services:
       dockerfile: Dockerfile
     environment:
       SERVER_URL: http://backend:${SERVER_PORT}/api/user/device
+    depends_on:
+      - backend
 
   database:
     image: postgres
