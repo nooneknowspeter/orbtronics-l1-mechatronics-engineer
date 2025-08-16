@@ -78,12 +78,15 @@ func loadEnvironmentFile(envFile string) error {
 	return nil
 }
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("error loading .env")
+	parentEnvFile := "../../.env"
+	if err := loadEnvironmentFile(parentEnvFile); err == nil {
 	}
 
 	port := os.Getenv("PORT")
+	cwdEnvFile := ".env"
+	if err := loadEnvironmentFile(cwdEnvFile); err == nil {
+	}
+
 	if port == "" {
 		port = "8000"
 	}
