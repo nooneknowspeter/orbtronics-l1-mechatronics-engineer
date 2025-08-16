@@ -4,6 +4,8 @@ services:
     build:
       context: ./src/frontend
       dockerfile: Dockerfile
+    ports:
+      - 4173:4173
   backend:
     restart: always
     build:
