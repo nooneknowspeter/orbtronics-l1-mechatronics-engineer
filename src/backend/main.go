@@ -55,6 +55,13 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 	}
 }
 
+func checkFileExistance(path string) (bool, error) {
+	if _, err := os.Stat(path); err != nil {
+		return false, fmt.Errorf("%s does not exist", path)
+	}
+
+	return true, nil
+}
 func main() {
 	err := godotenv.Load()
 	if err != nil {
