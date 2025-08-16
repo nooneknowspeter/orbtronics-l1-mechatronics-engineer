@@ -9,6 +9,9 @@ import (
 	"sync"
 
 	"github.com/joho/godotenv"
+	"nooneknows/orbtronics-l1-mechatronics-engineer/helpers"
+	"nooneknows/orbtronics-l1-mechatronics-engineer/models"
+	"nooneknows/orbtronics-l1-mechatronics-engineer/routes"
 )
 
 type DeviceData struct {
@@ -20,6 +23,7 @@ type DeviceData struct {
 var (
 	device DeviceData
 	mutex  sync.RWMutex
+	"nooneknows/orbtronics-l1-mechatronics-engineer/helpers"
 )
 
 func deviceData(writer http.ResponseWriter, request *http.Request) {
@@ -55,37 +59,15 @@ func deviceData(writer http.ResponseWriter, request *http.Request) {
 	}
 }
 
-func checkFileExistance(path string) (bool, error) {
-	if _, err := os.Stat(path); err != nil {
-		return false, fmt.Errorf("%s does not exist", path)
-	}
-
-	return true, nil
-}
-
-func loadEnvironmentFile(envFile string) error {
-	if doesFileExist, err := checkFileExistance(envFile); doesFileExist {
-		fmt.Printf("loading environment file: %s\n", envFile)
-		if err := godotenv.Load(envFile); err != nil {
-			log.Fatal("error loading .env")
-			return fmt.Errorf("")
-		}
-	} else {
-		fmt.Println(err)
-		return fmt.Errorf("")
-	}
-
-	return nil
-}
 func main() {
 	parentEnvFile := "../../.env"
-	if err := loadEnvironmentFile(parentEnvFile); err == nil {
+	if err := helpers.LoadEnvironmentFile(parentEnvFile); err == nil {
 	}
 
 	cwdEnvFile := ".env"
-	if err := loadEnvironmentFile(cwdEnvFile); err == nil {
+	if err := helpers.LoadEnvironmentFile(cwdEnvFile); err == nil {
 	}
-
+	
 	port := os.Getenv("SERVER_PORT")
 	if port == "" {
 		port = "8000"
