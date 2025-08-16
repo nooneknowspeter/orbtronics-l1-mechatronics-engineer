@@ -26,7 +26,7 @@ class Device:
         roundNDigits: int = 2,
         abnormalThreshols: float = 0.2,
     ) -> float:
-        abnormal_threshold = 0.2
+        abnormal_threshold = 0.8
         seed = random.random()
         random_value_from_range = random.uniform(start, end)
 
